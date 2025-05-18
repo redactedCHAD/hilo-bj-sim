@@ -2,28 +2,75 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to top */
+    align-items: flex-start;
     min-height: 100vh;
-    background-color: #33691E; /* Dark Green */
+    background-color: #33691E;
     color: #fff;
     margin: 0;
     padding-top: 20px;
 }
 
 .container {
-    background-color: #1B5E20; /* Darker Green */
+    background-color: #1B5E20;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     width: 90%;
     max-width: 700px;
     text-align: center;
+    position: relative; /* For positioning live RC */
 }
+
+/* *** NEW: Top Info Bar for Title and Live RC *** */
+.top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.top-info h1 {
+    margin: 0;
+    font-size: 1.5em; /* Adjust as needed */
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* *** NEW: Live Running Count Styling *** */
+.live-running-count {
+    background-color: #2E7D32;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+#live-rc-value {
+    font-weight: bold;
+    min-width: 30px; /* Space for "???" or "-XX" */
+    display: inline-block;
+    text-align: right;
+    margin-right: 5px;
+}
+
+#reveal-rc-btn {
+    background: none;
+    border: 1px solid #FFC107;
+    color: #FFC107;
+    border-radius: 3px;
+    padding: 2px 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+#reveal-rc-btn:hover {
+    background-color: #4A532E;
+}
+
 
 .shoe-info {
     font-size: 0.9em;
     margin-bottom: 15px;
-    color: #C8E6C9; /* Light Green */
+    color: #C8E6C9;
 }
 
 .game-area {
@@ -35,7 +82,7 @@ body {
 
 .dealer-area, .player-area {
     width: 45%;
-    background-color: #2E7D32; /* Medium Green */
+    background-color: #2E7D32;
     padding: 10px;
     border-radius: 5px;
 }
@@ -45,7 +92,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    min-height: 60px; /* Ensure space for cards */
+    min-height: 60px;
     margin-top: 10px;
 }
 
@@ -58,7 +105,7 @@ body {
     margin: 5px;
     font-size: 1.2em;
     font-weight: bold;
-    min-width: 30px; /* Width of a card */
+    min-width: 30px;
     text-align: center;
 }
 
@@ -88,18 +135,22 @@ body {
 
 .feedback {
     font-size: 0.9em;
-    min-height: 1.2em; /* Reserve space */
+    min-height: 1.2em;
+    margin-top: 3px;
 }
 .feedback.correct {
-    color: #66BB6A; /* Light Green for correct */
+    color: #66BB6A;
 }
 .feedback.incorrect {
-    color: #EF5350; /* Light Red for incorrect */
+    color: #EF5350;
+}
+.feedback.info { /* For deviation info */
+    color: #FFCA28; /* Amber */
 }
 
 
-.actions button, #next-hand-btn, #submit-guesses-btn, #toggle-true-count-btn {
-    background-color: #FFC107; /* Amber */
+.actions button, #next-hand-btn, #submit-guesses-btn {
+    background-color: #FFC107;
     color: #000;
     border: none;
     padding: 10px 15px;
@@ -110,19 +161,19 @@ body {
 }
 
 .actions button:disabled {
-    background-color: #757575; /* Grey */
+    background-color: #757575;
     cursor: not-allowed;
 }
 
-.actions button:hover:not(:disabled), 
-#next-hand-btn:hover, #submit-guesses-btn:hover, #toggle-true-count-btn:hover {
-    background-color: #FFA000; /* Darker Amber */
+.actions button:hover:not(:disabled),
+#next-hand-btn:hover, #submit-guesses-btn:hover {
+    background-color: #FFA000;
 }
 
 .messaging {
     margin-top: 15px;
     padding: 10px;
-    background-color: #424242; /* Dark Grey */
+    background-color: #424242;
     border-radius: 5px;
     min-height: 40px;
 }
@@ -131,6 +182,12 @@ body {
     font-weight: bold;
 }
 
+#true-count-display { /* Always visible now */
+    font-size: 0.9em;
+    color: #BDBDBD; /* Lighter grey */
+    margin-top: 5px;
+}
+
 .active-hand {
-    border: 2px solid #FFC107; /* Highlight active hand for split */
+    border: 2px solid #FFC107;
 }
