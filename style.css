@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    background-color: #33691E; /* Dark Green */
+    color: #fff;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.container {
+    background-color: #1B5E20; /* Darker Green */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.shoe-info {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #C8E6C9; /* Light Green */
+}
+
+.game-area {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    min-height: 150px;
+}
+
+.dealer-area, .player-area {
+    width: 45%;
+    background-color: #2E7D32; /* Medium Green */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px; /* Ensure space for cards */
+    margin-top: 10px;
+}
+
+.card {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 8px;
+    margin: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-width: 30px; /* Width of a card */
+    text-align: center;
+}
+
+.card.hidden {
+    background-color: #aaa;
+    color: #aaa;
+}
+
+.trainer-input {
+    margin-bottom: 20px;
+    background-color: #2E7D32;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.trainer-input label {
+    display: block;
+    margin: 8px 0 3px;
+}
+
+.trainer-input input {
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.feedback {
+    font-size: 0.9em;
+    min-height: 1.2em; /* Reserve space */
+}
+.feedback.correct {
+    color: #66BB6A; /* Light Green for correct */
+}
+.feedback.incorrect {
+    color: #EF5350; /* Light Red for incorrect */
+}
+
+
+.actions button, #next-hand-btn, #submit-guesses-btn, #toggle-true-count-btn {
+    background-color: #FFC107; /* Amber */
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.actions button:disabled {
+    background-color: #757575; /* Grey */
+    cursor: not-allowed;
+}
+
+.actions button:hover:not(:disabled), 
+#next-hand-btn:hover, #submit-guesses-btn:hover, #toggle-true-count-btn:hover {
+    background-color: #FFA000; /* Darker Amber */
+}
+
+.messaging {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #424242; /* Dark Grey */
+    border-radius: 5px;
+    min-height: 40px;
+}
+
+#message {
+    font-weight: bold;
+}
+
+.active-hand {
+    border: 2px solid #FFC107; /* Highlight active hand for split */
+}
