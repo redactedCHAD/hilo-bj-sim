@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack Strategy Trainer</title>
+    <title>Blackjack Strategy & Count Trainer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Blackjack Strategy & Count Trainer (6 Decks, H17)</h1>
+        <div class="top-info">
+            <h1>Blackjack Strategy & Count Trainer (6 Decks, H17)</h1>
+            <!-- *** NEW: Obscured Running Count Display *** -->
+            <div class="live-running-count">
+                Live RC: <span id="live-rc-value">???</span>
+                <button id="reveal-rc-btn" title="Toggle actual Running Count">👁️</button>
+            </div>
+        </div>
 
         <div class="shoe-info">
             Cards Remaining: <span id="cards-remaining">0</span> (<span id="decks-remaining">0</span> decks) <br>
@@ -32,13 +39,13 @@
         </div>
 
         <div class="trainer-input">
-            <label for="running-count-guess">Your Running Count Guess:</label>
+            <label for="running-count-guess">Your Running Count Guess (after initial deal):</label>
             <input type="number" id="running-count-guess" step="1">
             <p class="feedback" id="rc-feedback"></p>
 
             <label for="strategy-guess">Your Basic Strategy Play (H, S, D, P):</label>
             <input type="text" id="strategy-guess" maxlength="1" size="3">
-            <p class="feedback" id="bs-feedback"></p>
+            <p class="feedback" id="bs-feedback"></p> <!-- Will show BS and deviations -->
             <button id="submit-guesses-btn">Submit Guesses</button>
         </div>
 
@@ -51,12 +58,15 @@
 
         <div class="messaging">
             <p id="message">Welcome! Click "Next Hand" to start.</p>
-            <p id="true-count-display" style="display:none;">True Count (for reference): <span id="true-count-value">0</span></p>
+            <p id="true-count-display">True Count (approx): <span id="true-count-value">0</span></p>
+            <!-- *** NEW: Deviation Info Area (Optional) *** -->
+            <p id="deviation-info" class="feedback"></p>
         </div>
 
         <button id="next-hand-btn">Next Hand</button>
-        <button id="toggle-true-count-btn">Toggle True Count Display</button>
+        <!-- Removed toggle for TC display, it's always visible now for deviation context -->
     </div>
 
-    <script src="script.js"></script></body>
+    <script src="script.js"></script>
+</body>
 </html>
