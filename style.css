@@ -148,6 +148,113 @@ body {
     color: #FFCA28; /* Amber */
 }
 
+.settings-area {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #2E7D32;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9em;
+    display: flex; /* For aligning items */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping if space is tight */
+}
+
+.settings-area label {
+    margin-right: 8px;
+}
+
+.settings-area select {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+    margin-right: 10px; /* Space before next item */
+}
+.settings-area span {
+    margin-left: 0; /* Adjusted */
+    margin-right: 15px; /* Space before reset button */
+    font-style: italic;
+    color: #C8E6C9;
+}
+
+/* *** NEW: Reset Stats Button Styling *** */
+#reset-stats-btn {
+    background-color: #D32F2F; /* Red */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+#reset-stats-btn:hover {
+    background-color: #C62828; /* Darker Red */
+}
+
+
+/* *** NEW: Stats and Edge Area Styling *** */
+.stats-edge-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #2E7D32; /* Medium Green */
+    border-radius: 5px;
+    font-size: 0.85em;
+    color: #E0E0E0; /* Lighter text for this section */
+}
+
+.stats-display, .edge-betting-display {
+    width: 48%;
+    padding: 8px;
+    background-color: #1B5E20; /* Darker Green */
+    border-radius: 4px;
+}
+
+.stats-display h3, .edge-betting-display h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #FFC107; /* Amber for headers */
+    font-size: 1.1em;
+    border-bottom: 1px solid #4A532E;
+    padding-bottom: 4px;
+}
+
+.stats-display p, .edge-betting-display p {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.stats-display span, .edge-betting-display span { /* For the values */
+    font-weight: bold;
+    color: #fff;
+}
+
+#betting-ramp-info {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+#betting-ramp-info h4 {
+    margin-bottom: 5px;
+    color: #FFCA28;
+}
+#betting-ramp-info ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+#betting-ramp-info li {
+    color: #BDBDBD;
+}
+
+
+/* Message area, remove TC display from here if it was moved */
+.messaging #true-count-display {
+    display: none; /* No longer needed here */
+}
 
 .actions button, #next-hand-btn, #submit-guesses-btn {
     background-color: #FFC107;
